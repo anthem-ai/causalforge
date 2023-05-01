@@ -1,0 +1,15 @@
+name: causalflow
+channels:
+  - defaults
+  - anaconda
+dependencies:
+  - pip 
+  - setuptools
+  - cython
+  - tensorflow
+  - keras 
+  - pytorch
+  - matplotlib
+  - numpy
+  - scikit-learn
+  - pandas 

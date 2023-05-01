@@ -1,0 +1,13 @@
+setuptools
+pip>=10.0
+numpy>=1.18.5
+scipy>=1.4.1
+matplotlib
+pandas>=0.24.1
+scikit-learn
+statsmodels
+seaborn
+Cython
+tqdm
+torch
+docutils
