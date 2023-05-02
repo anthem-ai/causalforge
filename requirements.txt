@@ -10,3 +10,4 @@ seaborn
 Cython
 tqdm
 docutils
+requests

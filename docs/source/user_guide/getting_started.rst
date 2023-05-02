@@ -74,7 +74,7 @@ Methods Supported
 Example Usage
 -------------
 
-Autoimpute is designed to be user friendly and flexible. When performing imputation, Autoimpute fits directly into ``scikit-learn`` machine learning projects. Imputers inherit from sklearn's ``BaseEstimator`` and ``TransformerMixin`` and implement ``fit`` and ``transform`` methods, making them valid Transformers in an sklearn pipeline.
+CausalForge is designed to be user friendly and flexible. 
 
 Right now, there are two ``Imputer`` classes we'll work with:
 
@@ -180,26 +180,8 @@ Note that we can also pass a pre-specified ``MiceImputer`` to either analysis mo
 
 For a deeper understanding of how the package works and its features, see our `tutorials website <https://kearnz.github.io/autoimpute-tutorials/>`_.
 
-Creators and Maintainers
-------------------------
-
-
-* Joseph Kearney – `@kearnz <https://github.com/kearnz>`_
-* Shahid Barkat - `@shabarka <https://github.com/shabarka>`_
-
-See the `Authors <https://github.com/kearnz/autoimpute/blob/master/AUTHORS.rst>`_ page to get in touch!
-
 License
 -------
 
 Distributed under the MIT license. See `LICENSE <https://github.com/kearnz/autoimpute/blob/master/LICENSE>`_ for more information.
 
-Contributing
-------------
-
-Guidelines for contributing to our project. See `CONTRIBUTING <https://github.com/kearnz/autoimpute/blob/master/CONTRIBUTING.md>`_ for more information.
-
-Contributor Code of Conduct
----------------------------
-
-Adapted from Contributor Covenant, version 1.0.0. See `Code of Conduct <https://github.com/kearnz/autoimpute/blob/master/CODE_OF_CONDUCT.md>`_ for more information.
