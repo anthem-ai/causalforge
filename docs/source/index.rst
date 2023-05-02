@@ -25,7 +25,7 @@ This page introduces users to the package and documents its features.
 
 Check out the package on github_. 
 
-.. _github: https://github.com/anthem-ai/causalflow
+.. _github: https://github.com/anthem-ai/causalforge
 
 .. toctree::
     :caption: User Guide
