@@ -1,6 +1,6 @@
-<img alt="causalforge-logo" class="causalforge-logo"  height="250" width="300"  src="https://raw.githubusercontent.com/anthem-ai/causalflow/main/logo.png?token=GHSAT0AAAAAAB6UCMRK6JN5QVPWHF2GO3XSZCQL25A">
+<img alt="causalforge-logo" class="causalforge-logo"  height="250" width="300"  src="https://raw.githubusercontent.com/anthem-ai/causalforge/main/logo.png">
 
-# CausalFlow
+# CausalForge
 
 [![PyPI version](https://badge.fury.io/py/causalforge.svg)](https://badge.fury.io/py/causalforge)
 [![Documentation Status](https://readthedocs.org/projects/causalforge/badge/?version=latest)](https://causalforge.readthedocs.io/en/latest/?badge=latest)

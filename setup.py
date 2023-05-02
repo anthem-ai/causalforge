@@ -35,7 +35,7 @@ setup(
     description="Python Package for Causal Inference",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/anthem-ai/causalflow",
+    url="https://github.com/anthem-ai/causalforge",
     packages=packages,
     python_requires=">=3.7",
     classifiers=[
