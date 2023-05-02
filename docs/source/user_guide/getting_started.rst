@@ -1,22 +1,22 @@
 Getting Started
 ===============
 
-The sections below provide a high level overview of the ``Autoimpute`` package. This page takes you through installation, dependencies, main features, imputation methods supported, and basic usage of the package. It also provides links to get in touch with the authors, review our lisence, and review how to contribute.
+The sections below provide a high level overview of the ``CausalForge`` package. This page takes you through installation, dependencies, main features, imputation methods supported, and basic usage of the package. It also provides links to get in touch with the authors, review our lisence, and review how to contribute.
 
 Installation
 ------------
 
-
-* Download ``Autoimpute`` with ``pip install autoimpute``. 
-* If ``pip`` cached an older version, try ``pip install --no-cache-dir --upgrade autoimpute``.
+* Requires tensorflow and pytorch installed. For example, for a local Mac enviroment without GPUs, you can create one with ``conda env create -f env_mac.yml``, and you activate it with ``conda activate causalforge``. 
+* Download ``CausalForge`` with ``pip install causalforge``. 
+* If ``pip`` cached an older version, try ``pip install --no-cache-dir --upgrade causalforge``.
 * If you want to work with the development branch, use the script below:
 
 *Development*
 
 .. code-block:: sh
 
-   git clone -b dev --single-branch https://github.com/kearnz/autoimpute.git
-   cd autoimpute
+   git clone -b dev --single-branch https://github.com/anthem-ai/causalforge
+   cd causalforge
    python setup.py install
 
 Versions and Dependencies
@@ -26,41 +26,18 @@ Versions and Dependencies
 * Python 3.8+
 * Dependencies:
 
-  * ``numpy``
-  * ``scipy``
+  * ``numpy>=1.18.5``
+  * ``scipy>=1.4.1``
   * ``pandas``
   * ``statsmodels``
   * ``scikit-learn``
-  * ``xgboost``
+  * ``matplotlib``
   * ``pymc``
   * ``seaborn``
-  * ``missingno``
-
-*A note for Windows Users*\ :
-
-* Autoimpute 0.13.0+ has not been tested on windows and can't verify support for pymc. Historically we've had some issues with pymc on windows.
-* Autoimpute works on Windows but users may have trouble with pymc for bayesian methods. `(See discourse) <https://discourse.pymc.io/t/an-error-message-about-cant-pickle-fortran-objects/1073>`_
-* Users may receive a runtime error ``‘can’t pickle fortran objects’`` when sampling using multiple chains.
-* There are a couple of things to do to try to overcome this error:
-
-  * Reinstall theano and pymc. Make sure to delete .theano cache in your home folder.
-  * Upgrade joblib in the process, which is reponsible for generating the error (pymc uses joblib under the hood).
-  * Set ``cores=1`` in ``pm.sample``. This should be a last resort, as it means posterior sampling will use 1 core only. Not using multiprocessing will slow down bayesian imputation methods significantly.
-
-* Reach out and let us know if you've worked through this issue successfully on Windows and have a better solution!
-
-Main Features
--------------
+  * ``tqdm``
 
 
-* Utility functions and basic visualizations to explore missingness patterns
-* Missingness classifier and automatic missing data test set generator
-* Native handling for categorical variables (as predictors and targets of imputation)
-* Single and multiple imputation classes for ``pandas`` ``DataFrames``
-* Analysis methods and pooled parameter inference using multiply imputed datasets
-* Numerous imputation methods, as specified in the table below:
-
-Imputation Methods Supported
+Methods Supported
 ----------------------------
 
 .. list-table::

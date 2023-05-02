@@ -9,5 +9,4 @@ statsmodels
 seaborn
 Cython
 tqdm
-torch
 docutils
