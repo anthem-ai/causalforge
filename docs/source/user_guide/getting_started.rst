@@ -56,5 +56,5 @@ Methods Supported
 License
 -------
 
-Distributed under the MIT license. See `LICENSE <https://github.com/kearnz/autoimpute/blob/master/LICENSE>`_ for more information.
+Distributed under the MIT license. See `LICENSE <https://github.com/anthem-ai/causalforge/blob/main/LICENSE>`_ for more information.
 
