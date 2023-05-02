@@ -50,7 +50,7 @@ Methods Supported
      - `Learning end-to-end patient representations through self-supervised covariate balancing for causal treatment effect estimation <https://www.sciencedirect.com/science/article/pii/S1532046423000606/pdfft?md5=923768a5e1b27765e9da9ac13c0477aa&pid=1-s2.0-S1532046423000606-main.pdf>`_ 
      - Journal of Biomedical Informatics 2023 
    * - Dragonnet
-     - `Adapting Neural Networks for the Estimation of Treatment Effects https://arxiv.org/pdf/1906.02120v2.pdf>`_
+     - `Adapting Neural Networks for the Estimation of Treatment Effects <https://arxiv.org/pdf/1906.02120v2.pdf>`_
      - NeurIPS 2019   
 
 License
