@@ -16,7 +16,7 @@ def download_url(url, save_path, chunk_size=128):
 class DataLoader(ABC):
     
     def __init__(self):
-        pass 
+        self.loaded = False  
 
     @staticmethod
     def get_loader(dataset_name='IHDP'):
@@ -52,6 +52,9 @@ class DataLoader(ABC):
 
 
 class IHDPLoader(DataLoader):
+    
+    def __init__(self):
+        super(IHDPLoader, self).__init__()
 
     def load(self,test_size=None, random_state=None):
         my_path = os.path.abspath(os.path.dirname(__file__))
@@ -74,21 +77,38 @@ class IHDPLoader(DataLoader):
         train_cv = np.load(path_train)
         test = np.load(path_test)
     
-        X_tr    = train_cv.f.x.copy()
-        T_tr    = train_cv.f.t.copy()
-        YF_tr   = train_cv.f.yf.copy()
-        YCF_tr  = train_cv.f.ycf.copy()
-        mu_0_tr = train_cv.f.mu0.copy()
-        mu_1_tr = train_cv.f.mu1.copy()
+        self.X_tr    = train_cv.f.x.copy()
+        self.T_tr    = train_cv.f.t.copy()
+        self.YF_tr   = train_cv.f.yf.copy()
+        self.YCF_tr  = train_cv.f.ycf.copy()
+        self.mu_0_tr = train_cv.f.mu0.copy()
+        self.mu_1_tr = train_cv.f.mu1.copy()
         
-        X_te    = test.f.x.copy()
-        T_te    = test.f.t.copy()
-        YF_te   = test.f.yf.copy()
-        YCF_te  = test.f.ycf.copy()
-        mu_0_te = test.f.mu0.copy()
-        mu_1_te = test.f.mu1.copy()
+        self.X_te    = test.f.x.copy()
+        self.T_te    = test.f.t.copy()
+        self.YF_te   = test.f.yf.copy()
+        self.YCF_te  = test.f.ycf.copy()
+        self.mu_0_te = test.f.mu0.copy()
+        self.mu_1_te = test.f.mu1.copy()
         
-        return X_tr, T_tr, YF_tr, YCF_tr, mu_0_tr, mu_1_tr, X_te, T_te, YF_te, YCF_te, mu_0_te, mu_1_te
+        self.loaded = True
+        
+        return self.X_tr,self.T_tr, self.YF_tr, self.YCF_tr, self.mu_0_tr, self.mu_1_tr, \
+            self.X_te, self.T_te, self.YF_te, self.YCF_te, self.mu_0_te, self.mu_1_te
+    
+    
+    def __len__(self):
+        if not self.loaded:
+            self.load()
+        return self.X_tr.shape[-1]
+    
+    def __getitem__(self, idx):
+        if not self.loaded:
+            self.load()
+        return self.X_tr[:,:,idx], self.T_tr[:,idx], self.YF_tr[:,idx], self.YCF_tr[:,idx],self.mu_0_tr[:,idx], self.mu_1_tr[:,idx], \
+            self.X_te[:,:,idx], self.T_te[:,idx], self.YF_te[:,idx], self.YCF_te[:,idx], self.mu_0_te[:,idx], self.mu_1_te[:,idx]
+        
+        
 
             
             
