@@ -79,7 +79,7 @@ class Model(ABC):
     @abstractmethod
     def predict_ate(self, X):
         """
-        Predicts the individual treatment effect ("ITE").
+        Predicts the average treatment effect ("ATE").
 
         Args:
             X (np.matrix or np.array or pd.Dataframe): a feature matrix
