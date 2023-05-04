@@ -9,7 +9,7 @@
 
 
 CausalForge is a Python package that provides a suite of modeling & causal inference methods using machine learning algorithms based on Elevence Health recent research. It provides convenient APIs that allow to estimate Propensity Score, Average Treatment Effect (ATE), Conditional Average Treatment Effect (CATE) or Individual Treatment Effect (ITE) 
-from experimental or observational data. Methods have been redesigned for production. 
+from experimental or observational data. Methods have been redesigned for production. [Check out the documentation.](https://causalforge.readthedocs.io/en/latest/?badge=latest)
 
 <details>
   <summary> <H3>Installing Python Package</H3>  </summary>
