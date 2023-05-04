@@ -29,15 +29,18 @@ class Model(ABC):
                      problem_type=PROBLEM_TYPE.CAUSAL_TREATMENT_EFFECT_ESTIMATION, 
                      multiple_treatments=False):
         if  problem_type==PROBLEM_TYPE.CAUSAL_TREATMENT_EFFECT_ESTIMATION:
-            if name == 'dragonnet':
-                klass = dynamic_import('causalforge.models.DragonNet')
-                net = klass()
-                net.build(params)
-                return net
-            elif name == 'bcauss':
-                pass 
+            if multiple_treatments:
+                raise Exception("Multiple treatments not supported yet")
             else:
-                raise Exception("Model not supported yet::"+str(name))
+                if name == 'dragonnet':
+                    klass = dynamic_import('causalforge.models.DragonNet')
+                    net = klass()
+                    net.build(params)
+                    return net
+                elif name == 'bcauss':
+                    pass 
+                else:
+                    raise Exception("Model not supported yet::"+str(name))
         elif problem_type==PROBLEM_TYPE.PROPENSITY_ESTIMATION:
             raise Exception("problem_type not supported yet::"+str(problem_type))
         elif problem_type==PROBLEM_TYPE.SYNTHETIC_DATA_GENERATION:
