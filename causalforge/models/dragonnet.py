@@ -123,7 +123,8 @@ class DragonNet(Model):
         self.model = Model(inputs=inputs, outputs=concat_pred)
         self.params = params
     
-    
+    def support_ite(self):
+        return True 
     
     def predict_ite(self, X):
         preds = self.model.predict(X)

@@ -65,6 +65,16 @@ class Model(ABC):
         pass 
     
     @abstractmethod
+    def support_ite(self):
+        """
+        Whether the model supports individual treatment effect ("ITE") estimation 
+
+        Returns:
+            (Boolean): Whether the model supports ITE estimation
+        """
+        pass 
+    
+    @abstractmethod
     def predict_ite(self, X):
         """
         Predicts the individual treatment effect ("ITE").
