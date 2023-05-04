@@ -1,3 +1,8 @@
+"""
+Code Skeleton from: https://github.com/uber/causalml/blob/master/causalml/inference/tf/dragonnet.py
+Original implementation: https://github.com/claudiashi57/dragonnet 
+"""
+
 import numpy as np
 from tensorflow.keras import Input, Model
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, TerminateOnNaN
