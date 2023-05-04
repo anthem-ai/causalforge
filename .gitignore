@@ -20,6 +20,9 @@ wiki-news-300d-1M.vec
 # csv
 *.csv.*
 
+# data
+*/data/*
+
 # Distribution / packaging
 .Python
 build/

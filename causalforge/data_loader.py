@@ -26,7 +26,7 @@ class DataLoader(ABC):
             raise Exception('dataset not supported::'+str(dataset_name))
             
     @abstractmethod
-    def load(self,test_size=None, random_state=None):
+    def load(self):
         pass 
 
 
@@ -56,7 +56,7 @@ class IHDPLoader(DataLoader):
     def __init__(self):
         super(IHDPLoader, self).__init__()
 
-    def load(self,test_size=None, random_state=None):
+    def load(self):
         my_path = os.path.abspath(os.path.dirname(__file__))
         path = os.path.join(*[my_path, "data"])
         path_train_zip = os.path.join(*[my_path, "data" , "ihdp_npci_1-1000.train.npz.zip"])
