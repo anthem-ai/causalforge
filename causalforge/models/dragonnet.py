@@ -1,5 +1,3 @@
-#from ..model import Model
-
 import numpy as np
 from tensorflow.keras import Input, Model
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, TerminateOnNaN
@@ -8,7 +6,21 @@ from tensorflow.keras.optimizers import SGD, Adam
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.layers import Layer
 import tensorflow as tf
+import keras.backend as K
 
+from .utils import (
+    dragonnet_loss_binarycross,
+    EpsilonLayer,
+    regression_loss,
+    binary_classification_loss,
+    treatment_accuracy,
+    track_epsilon,
+    make_tarreg_loss,
+)
+
+def convert_pd_to_np(*args):
+    output = [obj.to_numpy() if hasattr(obj, "to_numpy") else obj for obj in args]
+    return output if len(output) > 1 else output[0]
 
 class EpsilonLayer(Layer):
     """
@@ -36,6 +48,8 @@ class EpsilonLayer(Layer):
 class DragonNet(Model):
     
     def build(self,params):
+        K.clear_session()
+        
         inputs = Input(shape=(params['input_dim'],), name="input")
         
         # representation
@@ -102,7 +116,89 @@ class DragonNet(Model):
         )
         
         self.model = Model(inputs=inputs, outputs=concat_pred)
+        self.params = params
+    
+    
+    
+    def predict_ite(self, X):
+        preds = self.model.predict(X)
+        return (preds[:, 1] - preds[:, 0]).reshape(-1, 1)
+    
+    def fit(self, X, treatment, y):
+        X, treatment, y = convert_pd_to_np(X, treatment, y)
+        y = np.hstack((y.reshape(-1, 1), treatment.reshape(-1, 1)))
+        metrics = [
+            regression_loss,
+            binary_classification_loss,
+            treatment_accuracy,
+            track_epsilon,
+        ]
+        
+        if 'targeted_reg' in self.params and self.params['targeted_reg']:
+            loss = make_tarreg_loss(ratio=self.params['ratio'], dragonnet_loss=dragonnet_loss_binarycross)
+        else:
+            loss = dragonnet_loss_binarycross
+        
+        if 'use_adam' in self.params and self.params['use_adam']: 
+            self.model.compile(
+                optimizer=Adam(lr=self.params['adam_learning_rate']), loss=loss, metrics=metrics
+            )
 
+            adam_callbacks = [
+                TerminateOnNaN(),
+                EarlyStopping(monitor="val_loss", patience=2, min_delta=0.0),
+                ReduceLROnPlateau(
+                    monitor="loss",
+                    factor=0.5,
+                    patience=5,
+                    verbose=self.params['verbose'],
+                    mode="auto",
+                    min_delta=1e-8,
+                    cooldown=0,
+                    min_lr=0,
+                ),
+            ]
+            
+            self.model.fit(
+                X,
+                y,
+                callbacks=adam_callbacks,
+                validation_split=self.params['val_split'],
+                epochs=self.params['adam_epochs'],
+                batch_size=self.params['batch_size'],
+                verbose=self.params['verbose']
+            )
+        
+        # 
+        sgd_callbacks = [
+            TerminateOnNaN(),
+            EarlyStopping(monitor="val_loss", patience=40, min_delta=0.0),
+            ReduceLROnPlateau(
+                monitor="loss",
+                factor=0.5,
+                patience=5,
+                verbose=self.params['verbose'],
+                mode="auto",
+                min_delta=0.0,
+                cooldown=0,
+                min_lr=0,
+            ),
+        ]
+        self.model.compile(
+            optimizer=SGD(lr=self.params['learning_rate'], momentum=self.params['momentum'], 
+                          nesterov=True),
+            loss=loss,
+            metrics=metrics,
+        )
+        self.model.fit(
+            X,
+            y,
+            callbacks=sgd_callbacks,
+            validation_split=self.params['val_split'],
+            epochs=self.params['epochs'],
+            batch_size=self.params['batch_size'],
+            verbose=self.params['verbose']
+        )
     
     
     
