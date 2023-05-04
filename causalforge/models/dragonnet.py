@@ -127,7 +127,10 @@ class DragonNet(Model):
     
     def predict_ite(self, X):
         preds = self.model.predict(X)
-        return (preds[:, 1] - preds[:, 0]).reshape(-1, 1)
+        return (preds[:, 1] - preds[:, 0])
+    
+    def predict_ate(self, X):
+        return np.mean(self.predict_ite(X))
     
     def fit(self, X, treatment, y):
         X, treatment, y = convert_pd_to_np(X, treatment, y)

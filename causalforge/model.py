@@ -75,4 +75,16 @@ class Model(ABC):
             (np.array): treatment effect vector
         """
         pass 
+    
+    @abstractmethod
+    def predict_ate(self, X):
+        """
+        Predicts the individual treatment effect ("ITE").
+
+        Args:
+            X (np.matrix or np.array or pd.Dataframe): a feature matrix
+        Returns:
+            (np.array): treatment effect vector
+        """
+        pass 
 
