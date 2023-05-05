@@ -37,12 +37,6 @@ DragonNet on IHDP
 
 .. parsed-literal::
 
-    2023-05-05 16:08:33.088174: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
-    To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-
-
-.. parsed-literal::
-
     Model: "model"
     __________________________________________________________________________________________________
      Layer (type)                   Output Shape         Param #     Connected to                     
@@ -54,16 +48,6 @@ DragonNet on IHDP
      dense_1 (Dense)                (None, 200)          40200       ['dense[0][0]']                  
                                                                                                       
      dense_2 (Dense)                (None, 200)          40200       ['dense_1[0][0]']                
-                                                                                                      
-
-
-.. parsed-literal::
-
-    2023-05-05 16:08:36.229178: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
-    To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-
-
-.. parsed-literal::
 
      dense_4 (Dense)                (None, 100)          20100       ['dense_2[0][0]']                
                                                                                                       
@@ -133,8 +117,6 @@ DragonNet on IHDP
     Epoch 1/30
     ...
 
-.. parsed-literal::
-
     9/9 [==============================] - 2s 43ms/step - loss: 1837.5880 - regression_loss: 847.2359 - binary_classification_loss: 35.7781 - treatment_accuracy: 0.7672 - track_epsilon: 0.0607 - val_loss: 402.8440 - val_regression_loss: 140.5852 - val_binary_classification_loss: 21.5544 - val_treatment_accuracy: 0.8006 - val_track_epsilon: 0.0610 - lr: 0.0010
     Epoch 2/30
     9/9 [==============================] - 0s 7ms/step - loss: 355.1468 - regression_loss: 146.8956 - binary_classification_loss: 30.7850 - treatment_accuracy: 0.8042 - track_epsilon: 0.0616 - val_loss: 186.1139 - val_regression_loss: 57.0438 - val_binary_classification_loss: 20.9781 - val_treatment_accuracy: 0.8006 - val_track_epsilon: 0.0606 - lr: 0.0010
@@ -144,7 +126,7 @@ DragonNet on IHDP
     9/9 [==============================] - 0s 7ms/step - loss: 226.9801 - regression_loss: 90.6360 - binary_classification_loss: 29.8652 - treatment_accuracy: 0.8069 - track_epsilon: 0.0597 - val_loss: 205.2203 - val_regression_loss: 63.8470 - val_binary_classification_loss: 20.7406 - val_treatment_accuracy: 0.8006 - val_track_epsilon: 0.0594 - lr: 0.0010
     Epoch 1/100
 
-.. parsed-literal::
+    ...
 
     9/9 [==============================] - 2s 46ms/step - loss: 211.6185 - regression_loss: 84.1101 - binary_classification_loss: 29.5777 - treatment_accuracy: 0.8096 - track_epsilon: 0.0494 - val_loss: 187.8485 - val_regression_loss: 57.8545 - val_binary_classification_loss: 20.9967 - val_treatment_accuracy: 0.8006 - val_track_epsilon: 0.0354 - lr: 1.0000e-05
     Epoch 2/100
