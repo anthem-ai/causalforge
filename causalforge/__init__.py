@@ -5,4 +5,4 @@ from .model import Model
 
 from . import models
 
-__version__ = '0.0.7'
+__version__ = '0.0.8'
