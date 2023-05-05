@@ -56,7 +56,7 @@ reproducible, we use the simulated outcome implemented as setting “A” in
 [2], and downloaded the data at https://www.fredjo.com/, which is
 composed of 1000 repetitions of the experiment.
 
-.. code:: ipython3
+.. code:: python
 
     from causalforge.data_loader import DataLoader 
     
@@ -85,7 +85,7 @@ composed of 1000 repetitions of the experiment.
 
 
 
-.. code:: ipython3
+.. code:: python
 
     X_te.shape, T_te.shape, YF_te.shape , YCF_te.shape, mu_0_te.shape , mu_1_te.shape 
 
@@ -111,7 +111,7 @@ Notice that the last dimension of each variable is 1000, as we have 1000
 repetitions of the experiment. Hence, this dataset should be used pretty
 much like in this code sketch:
 
-.. code:: ipython3
+.. code:: python
 
     for idx in range(X_tr.shape[-1]):    
         t_tr, y_tr, x_tr, mu0tr, mu1tr = T_tr[:,idx] , YF_tr[:,idx], X_tr[:,:,idx], mu_0_tr[:,idx], mu_1_tr[:,idx] 
@@ -172,7 +172,7 @@ the 1000 repetitions.
 Notice that even if we use the ground truth on the train-set to estimate
 the ATE of the test-set we don’t have a zero error:
 
-.. code:: ipython3
+.. code:: python
 
     from causalforge.metrics import eps_ATE
     import numpy as np
@@ -191,7 +191,7 @@ the ATE of the test-set we don’t have a zero error:
 Plot ITE Distribution
 ---------------------
 
-.. code:: ipython3
+.. code:: python
 
     from causalforge.utils import plot_ite_distribution
     
