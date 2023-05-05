@@ -68,7 +68,7 @@ composed of 1000 repetitions of the experiment.
 
 .. parsed-literal::
 
-    2023-05-04 19:05:37.783274: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+    2023-05-04 21:55:10.169545: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
     To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
 
@@ -187,6 +187,27 @@ the ATE of the test-set we don’t have a zero error:
     0.5879717298086842
 
 
+
+Plot ITE Distribution
+---------------------
+
+.. code:: ipython3
+
+    from causalforge.utils import plot_ite_distribution
+    
+    plot_ite_distribution(ITE_truth_tr)
+
+
+
+
+.. parsed-literal::
+
+    <seaborn.axisgrid.FacetGrid at 0x7f827415f160>
+
+
+
+
+.. image:: output_17_1.png
 
 
 References
