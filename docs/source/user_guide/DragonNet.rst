@@ -131,13 +131,7 @@ DragonNet on IHDP
 .. parsed-literal::
 
     Epoch 1/30
-
-
-.. parsed-literal::
-
-    /Users/AG62216/opt/anaconda3/envs/causalforge/lib/python3.10/site-packages/keras/optimizers/optimizer_v2/adam.py:114: UserWarning: The `lr` argument is deprecated, use `learning_rate` instead.
-      super().__init__(name, **kwargs)
-
+    ...
 
 .. parsed-literal::
 
@@ -149,13 +143,6 @@ DragonNet on IHDP
     Epoch 4/30
     9/9 [==============================] - 0s 7ms/step - loss: 226.9801 - regression_loss: 90.6360 - binary_classification_loss: 29.8652 - treatment_accuracy: 0.8069 - track_epsilon: 0.0597 - val_loss: 205.2203 - val_regression_loss: 63.8470 - val_binary_classification_loss: 20.7406 - val_treatment_accuracy: 0.8006 - val_track_epsilon: 0.0594 - lr: 0.0010
     Epoch 1/100
-
-
-.. parsed-literal::
-
-    /Users/AG62216/opt/anaconda3/envs/causalforge/lib/python3.10/site-packages/keras/optimizers/optimizer_v2/gradient_descent.py:111: UserWarning: The `lr` argument is deprecated, use `learning_rate` instead.
-      super().__init__(name, **kwargs)
-
 
 .. parsed-literal::
 
