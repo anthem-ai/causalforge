@@ -83,6 +83,10 @@ def eps_ATE(y: np.ndarray, hat_y: np.ndarray) -> np.ndarray:
     return np.abs(np.mean(y[:, 1] - y[:, 0]) - np.mean(hat_y[:, 1] - hat_y[:, 0]))
 
 
+def eps_ATE_diff(ite: np.ndarray, hat_ite: np.ndarray) -> np.ndarray:
+    return np.abs(np.mean(ite) - np.mean(hat_ite))
+
+
 def ATT(t: np.ndarray, y: np.ndarray, hat_y: np.ndarray) -> np.ndarray:
     """
     Average Treatment Effect on the Treated(ATT).

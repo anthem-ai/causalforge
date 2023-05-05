@@ -52,7 +52,34 @@ class EpsilonLayer(Layer):
 
 class DragonNet(Model):
     
-    def build(self,params):
+    def build(self,user_params):
+        
+        if 'input_dim' not in user_params:
+            raise Exception("input_dim must be specified!")
+        
+        params = {
+            'neurons_per_layer': 200, 
+            'reg_l2': 0.01, 
+            'targeted_reg': True, 
+            'verbose': True, 
+            'val_split': 0.2, 
+            'ratio': 1.0, 
+            'batch_size': 64,
+            'epochs': 100,
+            'learning_rate': 1e-5, 
+            'momentum': 0.9,
+            'use_adam': True,
+            'adam_epochs':30, 
+            'adam_learning_rate': 1e-3
+        }
+        
+        for k in params:
+            if k in user_params:
+                params[k] = user_params[k]
+                
+        params['input_dim' ] = user_params['input_dim']
+       
+        # 
         K.clear_session()
         
         inputs = Input(shape=(params['input_dim'],), name="input")
