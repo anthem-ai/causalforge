@@ -68,7 +68,7 @@ setattr(sys.modules["numpy"], "__version__", "1.15.4")
 # -- Project information -----------------------------------------------------
 
 project = "CausalForge"
-copyright = "2023, Elevance Health, inc."
+copyright = "2023, Elevance Health, Inc."
 author = "Gino Tesei, Jey Kottalam"
 
 # The short X.Y version
