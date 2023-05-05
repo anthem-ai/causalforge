@@ -32,7 +32,7 @@ Check out the package on github_.
     :titlesonly:
     
     Getting Started <user_guide/getting_started>
-    Utility Methods <user_guide/utils>
+    Loading Real-World & Benchmarking Datasets with CausalForge <user_guide/Loading_Causal_RW_Benchmarking_Datasets>
     Deletion and Imputation Strategies <user_guide/strategies>
     Single, Multiple, and Mice Imputers <user_guide/imputers>
     Missingness Classifier <user_guide/missingness>
