@@ -34,10 +34,5 @@ Check out the package on github_.
     Getting Started <user_guide/getting_started>
     Loading Real-World & Benchmarking Datasets with CausalForge <user_guide/Loading_Causal_RW_Benchmarking_Datasets>
     DragonNet <user_guide/DragonNet>
-    Deletion and Imputation Strategies <user_guide/strategies>
-    Single, Multiple, and Mice Imputers <user_guide/imputers>
-    Missingness Classifier <user_guide/missingness>
-    Analysis Models <user_guide/analysis>
-    Visualization Methods <user_guide/visuals>
 
 We are actively developing `CausalForge`, so sometimes the docs fall behind. The `README` is always up to date, as is the master branch. Therefore, consult those first. If you find discrepancies between the docs and the package, please still let us know!
