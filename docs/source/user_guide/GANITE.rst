@@ -11,7 +11,7 @@ the original paper.
 GANITE on IHDP
 --------------
 
-.. code:: ipython3
+.. code:: python
 
     from causalforge.model import Model , PROBLEM_TYPE
     from causalforge.data_loader import DataLoader 
