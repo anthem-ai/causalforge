@@ -4,7 +4,8 @@ Original implementation: https://github.com/claudiashi57/dragonnet
 """
 
 import numpy as np
-from tensorflow.keras import Input, Model
+from tensorflow.keras import Input
+from tensorflow.keras import Model as keras_Model
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, TerminateOnNaN
 from tensorflow.keras.layers import Dense, Concatenate
 from tensorflow.keras.optimizers import SGD, Adam
@@ -22,6 +23,9 @@ from .utils import (
     track_epsilon,
     make_tarreg_loss,
 )
+
+from causalforge.model import Model
+
 
 def convert_pd_to_np(*args):
     output = [obj.to_numpy() if hasattr(obj, "to_numpy") else obj for obj in args]
@@ -147,7 +151,7 @@ class DragonNet(Model):
             [y0_predictions, y1_predictions, t_predictions, epsilons]
         )
         
-        self.model = Model(inputs=inputs, outputs=concat_pred)
+        self.model = keras_Model(inputs=inputs, outputs=concat_pred)
         self.params = params
     
     def support_ite(self):

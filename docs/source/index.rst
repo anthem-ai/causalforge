@@ -34,5 +34,6 @@ Check out the package on github_.
     Getting Started <user_guide/getting_started>
     Loading Real-World & Benchmarking Datasets with CausalForge <user_guide/Loading_Causal_RW_Benchmarking_Datasets>
     DragonNet <user_guide/DragonNet>
+    GANITE <user_guide/GANITE>
 
 We are actively developing `CausalForge`, so sometimes the docs fall behind. The `README` is always up to date, as is the master branch. Therefore, consult those first. If you find discrepancies between the docs and the package, please still let us know!

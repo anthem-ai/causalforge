@@ -12,9 +12,9 @@ def dynamic_import(name):
 
 
 class PROBLEM_TYPE(Enum):
-    CAUSAL_TREATMENT_EFFECT_ESTIMATION = 1
-    PROPENSITY_ESTIMATION = 2 
-    SYNTHETIC_DATA_GENERATION = 3
+    CAUSAL_TREATMENT_EFFECT_ESTIMATION = "causal_treatment_effect_estimation"
+    PROPENSITY_ESTIMATION = "propensity_estimation"
+    SYNTHETIC_DATA_GENERATION = "syntethic_data_generation"
 
 
 class Model(ABC):
@@ -35,6 +35,11 @@ class Model(ABC):
                     klass = dynamic_import('causalforge.models.DragonNet')
                     net = klass()
                     net.build(params)
+                    return net
+                elif name == 'ganite':
+                    klass = dynamic_import('causalforge.models.Ganite')
+                    net = klass()
+                    net.build(params) 
                     return net
                 elif name == 'bcauss':
                     pass 
