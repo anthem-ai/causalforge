@@ -52,7 +52,7 @@ Methods Supported
    * - Dragonnet
      - `Claudia Shi et al, Adapting Neural Networks for the Estimation of Treatment Effects <https://arxiv.org/pdf/1906.02120v2.pdf>`_
      - NeurIPS 2019   
-  * - GANITE
+   * - GANITE
      - `Jinsung Yoon et al, GANITE: Estimation of Individualized Treatment Effects using Generative Adversarial Nets <https://openreview.net/pdf?id=ByKWUeWA->`_
      - ICLR 2018  
 
