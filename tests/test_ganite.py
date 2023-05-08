@@ -16,7 +16,7 @@ def test_factory():
     params['minibatch_size'] = 256 
     params['alpha'] = 0.1
     params['beta'] = 0
-    params['num_iterations'] = 500 
+    params['num_iterations'] = 501 
     params['num_discr_iterations'] = 1
    
     
@@ -35,6 +35,8 @@ def test_factory():
     t_te, y_te, x_te, mu0te, mu1te = T_te[:,idx] , YF_te[:,idx], X_te[:,:,idx], mu_0_te[:,idx], mu_1_te[:,idx]
 
     ganite.fit(x_tr,t_tr,y_tr)
+    
+    assert ganite.model.num_iterations == 501
     
     # test 
     pred_test_ite =  ganite.predict_ite(x_te)
