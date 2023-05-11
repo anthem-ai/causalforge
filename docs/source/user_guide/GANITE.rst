@@ -161,7 +161,7 @@ Results
       </thead>
       <tbody>
         <tr>
-          <th>DragonNet</th>
+          <th>GANITE</th>
           <td>1.289279</td>
           <td>1.360971</td>
           <td>3.802482</td>
