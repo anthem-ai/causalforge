@@ -21,38 +21,11 @@ from .utils import (
     binary_classification_loss,
     treatment_accuracy,
     track_epsilon,
+    convert_pd_to_np,
     make_tarreg_loss,
 )
 
 from causalforge.model import Model
-
-
-def convert_pd_to_np(*args):
-    output = [obj.to_numpy() if hasattr(obj, "to_numpy") else obj for obj in args]
-    return output if len(output) > 1 else output[0]
-
-class EpsilonLayer(Layer):
-    """
-    Custom keras layer to allow epsilon to be learned during training process.
-    """
-
-    def __init__(self):
-        """
-        Inherits keras' Layer object.
-        """
-        super(EpsilonLayer, self).__init__()
-
-    def build(self, input_shape):
-        """
-        Creates a trainable weight variable for this layer.
-        """
-        self.epsilon = self.add_weight(
-            name="epsilon", shape=[1, 1], initializer="RandomNormal", trainable=True
-        )
-        super(EpsilonLayer, self).build(input_shape)
-
-    def call(self, inputs, **kwargs):
-        return self.epsilon * tf.ones_like(inputs)[:, 0:1]
 
 class DragonNet(Model):
     
@@ -78,8 +51,7 @@ class DragonNet(Model):
         }
         
         for k in params:
-            if k in user_params:
-                params[k] = user_params[k]
+            params[k] = user_params.get(k,params[k])
                 
         params['input_dim' ] = user_params['input_dim']
        

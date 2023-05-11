@@ -31,7 +31,12 @@ class Model(ABC):
             if multiple_treatments:
                 raise Exception("Multiple treatments not supported yet")
             else:
-                if name == 'dragonnet':
+                if name == 'bcauss':
+                    klass = dynamic_import('causalforge.models.BCAUSS')
+                    net = klass()
+                    net.build(params)
+                    return net
+                elif name == 'dragonnet':
                     klass = dynamic_import('causalforge.models.DragonNet')
                     net = klass()
                     net.build(params)

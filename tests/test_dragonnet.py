@@ -4,7 +4,7 @@ from causalforge.model import Model , PROBLEM_TYPE
 from causalforge.data_loader import DataLoader 
 from causalforge.metrics import eps_ATE_diff, PEHE_with_ite
 
-def test_factory():
+def test_train():
      
     # load IHDP dataset 
     r = DataLoader.get_loader('IHDP').load()

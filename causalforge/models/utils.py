@@ -4,6 +4,11 @@ from tensorflow.keras.layers import Layer
 from tensorflow.keras.metrics import binary_accuracy
 
 
+def convert_pd_to_np(*args):
+    output = [obj.to_numpy() if hasattr(obj, "to_numpy") else obj for obj in args]
+    return output if len(output) > 1 else output[0]
+
+
 def binary_classification_loss(concat_true, concat_pred):
     """
     Implements a classification (binary cross-entropy) loss function for DragonNet architecture.
