@@ -39,7 +39,7 @@ Parameters
 ----------
 
 -  **dim_hidden**: hidden dimension (by default, ``100``)
--  **minibatch_size**: batch-size (by default,``256``)
+-  **minibatch_size**: batch-size (by default, ``256``)
 -  **reg_l2**: L2 regularization (by default, ``0.01``)
 -  **alpha**: alpha (by default, ``0.1``)
 -  **beta**: beta (by default, ``0``)
