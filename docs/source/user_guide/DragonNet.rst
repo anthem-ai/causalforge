@@ -82,6 +82,28 @@ DragonNet on IHDP
     Non-trainable params: 0
     __________________________________________________________________________________________________
 
+Parameters
+----------
+
+-  **input_dim**: number of inputs
+-  **neurons_per_layer**: number of neurons per layer (by default,
+   ``200``)
+-  **reg_l2**: L2 regularization (by default, ``0.01``)
+-  **targeted_reg**: to use the targeted regularization term (by default, ``True``)
+-  **verbose**: verbose (by default, ``True``)
+-  **val_split**: validation split ratio (by default, ``0.22``)
+-  **batch_size**: batch size (by default, ``64``)
+-  **ratio**: relative importance of the targeted regularization term,
+   if adopted (by default, ``1.0``)
+-  **epochs**: number of epochs (by default, ``500``)
+-  **learning_rate**: learning rate (by default, ``1e-5``)
+-  **momentum**: momentum (by default, ``0.9``)
+-  **use_adam**: to use Adam before SGD (by default, ``True``)
+-  **adam_epochs**: number of epochs to use for Adam, if adopted (by default, ``30``)
+-  **adam_learning_rate**: learning rate for Adam, if adopted (by default, ``1e-3``)
+
+Training
+--------
 
 .. code:: python
 
