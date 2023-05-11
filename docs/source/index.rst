@@ -33,6 +33,7 @@ Check out the package on github_.
     
     Getting Started <user_guide/getting_started>
     Loading Real-World & Benchmarking Datasets with CausalForge <user_guide/Loading_Causal_RW_Benchmarking_Datasets>
+    BCAUSS <user_guide/BCAUSS>
     DragonNet <user_guide/DragonNet>
     GANITE <user_guide/GANITE>
 
