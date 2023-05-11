@@ -232,6 +232,38 @@ BCAUSS on IHDP
     __________________________________________________________________________________________________
 
 
+Parameters
+----------
+
+-  **input_dim**: number of inputs
+-  **neurons_per_layer**: number of neurons per layer (by default,
+   ``200``)
+-  **act_fn**: activation function [``relu``\ \|\ ``elu``\ \|\ ``tanh``]
+   (by default, ``relu``)
+-  **reg_l2**: L2 regularization (by default, ``0.01``)
+-  **verbose**: verbose (by default, ``True``)
+-  **val_split**: validation split ratio (by default, ``0.22``)
+-  **ratio**: relative importance of the targeted regularization term,
+   if adopted (by default, ``1.0``)
+-  **optim**: optimizer [``sgd``\ \|\ ``adam``] (by default, ``sgd``)
+-  **epochs**: number of epochs (by default, ``500``)
+-  **learning_rate**: learning rate (by default, ``1e-5``)
+-  **momentum**: momentum (by default, ``0.9``)
+-  **use_bce**: to use the binary cross-entropy to train the propensity
+   score estimator (by default, ``False``)
+-  **norm_bal_term**: to normalize the auto-balancing regularization
+   term (by default, ``True``)
+-  **use_targ_term**: to use the targeted regularization objective (by
+   default, ``False``)
+-  **b_ratio**: relative importance of the auto-balancing regularization
+   objective (by default, ``1.0``)
+-  **bs_ratio**: percentage of train-set to use as batch-size (by
+   default, ``1.0``)
+-  **scale_preds**: to scale predictions (by default, ``True``)
+
+Training
+--------
+
 .. code:: python
 
     from causalforge.metrics import eps_ATE_diff, PEHE_with_ite
