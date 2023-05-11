@@ -35,6 +35,20 @@ GANITE on IHDP
                                 problem_type=PROBLEM_TYPE.CAUSAL_TREATMENT_EFFECT_ESTIMATION, 
                                 multiple_treatments=False)
 
+Parameters
+----------
+
+-  **dim_hidden**: hidden dimension (by default, ``100``)
+-  **minibatch_size**: batch-size (by default,``256``)
+-  **reg_l2**: L2 regularization (by default, ``0.01``)
+-  **alpha**: alpha (by default, ``0.1``)
+-  **beta**: beta (by default, ``0``)
+-  **depth**: depth (by default, ``0``)
+-  **num_iterations**: number of iterations (by default, ``5000``)
+-  **num_discr_iterations**: number of iterations of discriminator (by default, ``1``)
+
+Training
+--------
 
 .. code:: python
 
