@@ -130,6 +130,7 @@ class DragonNet(Model):
         return True 
     
     def predict_ite(self, X):
+        X = convert_pd_to_np(X)
         preds = self.model.predict(X)
         return (preds[:, 1] - preds[:, 0])
     

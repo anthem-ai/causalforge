@@ -142,6 +142,7 @@ class BCAUSS(Model):
         return True 
     
     def predict_ite(self, X):
+        X = convert_pd_to_np(X)
         dummy = np.zeros((X.shape[0],))
         preds = self.model.predict([X,dummy,dummy])
         if self.params['scale_preds']:

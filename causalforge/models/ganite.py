@@ -11,6 +11,9 @@ import numpy as np
 import torch
 from torch import nn
 from causalforge.model import Model
+from .utils import (
+    convert_pd_to_np
+)
 
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -27,12 +30,14 @@ class Ganite(Model):
         return True 
     
     def predict_ite(self, X):
+        X = convert_pd_to_np(X)
         return self.model(X).numpy()
     
     def predict_ate(self, X):
         return np.mean(self.predict_ite(X))
     
     def fit(self, X, treatment, y):
+        X, treatment, y = convert_pd_to_np(X, treatment, y)
         self.model = Ganite_Model(self,X, treatment, y)
         
 #------------------------------------------------------------------------------
