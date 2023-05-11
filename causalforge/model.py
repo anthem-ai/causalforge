@@ -33,23 +33,18 @@ class Model(ABC):
             else:
                 if name == 'bcauss':
                     klass = dynamic_import('causalforge.models.BCAUSS')
-                    net = klass()
-                    net.build(params)
-                    return net
                 elif name == 'dragonnet':
                     klass = dynamic_import('causalforge.models.DragonNet')
-                    net = klass()
-                    net.build(params)
-                    return net
                 elif name == 'ganite':
                     klass = dynamic_import('causalforge.models.Ganite')
-                    net = klass()
-                    net.build(params) 
-                    return net
                 elif name == 'bcauss':
                     pass 
                 else:
                     raise Exception("Model not supported yet::"+str(name))
+                #
+                net = klass()
+                net.build(params)
+                return net
         elif problem_type==PROBLEM_TYPE.PROPENSITY_ESTIMATION:
             raise Exception("problem_type not supported yet::"+str(problem_type))
         elif problem_type==PROBLEM_TYPE.SYNTHETIC_DATA_GENERATION:
