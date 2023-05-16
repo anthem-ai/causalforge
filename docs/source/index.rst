@@ -36,5 +36,6 @@ Check out the package on github_.
     BCAUSS <user_guide/BCAUSS>
     DragonNet <user_guide/DragonNet>
     GANITE <user_guide/GANITE>
+    BCAUS <user_guide/BCAUS>
 
 We are actively developing `CausalForge`, so sometimes the docs fall behind. The `README` is always up to date, as is the master branch. Therefore, consult those first. If you find discrepancies between the docs and the package, please still let us know!

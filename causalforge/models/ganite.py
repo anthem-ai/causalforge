@@ -33,7 +33,7 @@ class Ganite(Model):
         X = convert_pd_to_np(X)
         return self.model(X).numpy()
     
-    def predict_ate(self, X):
+    def predict_ate(self, X,treatment,y):
         return np.mean(self.predict_ite(X))
     
     def fit(self, X, treatment, y):

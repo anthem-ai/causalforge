@@ -134,7 +134,7 @@ class DragonNet(Model):
         preds = self.model.predict(X)
         return (preds[:, 1] - preds[:, 0])
     
-    def predict_ate(self, X):
+    def predict_ate(self, X,treatment,y):
         return np.mean(self.predict_ite(X))
     
     def fit(self, X, treatment, y):

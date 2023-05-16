@@ -148,7 +148,7 @@ class BCAUSS(Model):
             preds[:, 1] = np.squeeze(self.y_scaler.inverse_transform(preds[:, 1].reshape(-1,1).copy()),axis=-1)
         return (preds[:, 1] - preds[:, 0])
     
-    def predict_ate(self, X):
+    def predict_ate(self, X,treatment,y):
         return np.mean(self.predict_ite(X))
     
     def fit(self, X, treatment, y):
