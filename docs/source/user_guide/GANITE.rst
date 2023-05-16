@@ -77,8 +77,8 @@ Training
         ITE_truth_tr = (mu1tr - mu0tr)
         ITE_truth_te = (mu1te - mu0te)
         
-        eps_ATE_tr.append( eps_ATE_diff( ganite.predict_ite(x_tr), ITE_truth_tr) )
-        eps_ATE_te.append( eps_ATE_diff( ganite.predict_ite(x_te), ITE_truth_te) )
+        eps_ATE_tr.append( eps_ATE_diff( ganite.predict_ate(x_tr,t_tr,y_tr), ATE_truth_tr) )
+        eps_ATE_te.append( eps_ATE_diff( ganite.predict_ate(x_te,t_te,y_te), ATE_truth_te) )
         
         eps_PEHE_tr.append( PEHE_with_ite( ganite.predict_ite(x_tr), ITE_truth_tr, sqrt=True))
         eps_PEHE_te.append( PEHE_with_ite( ganite.predict_ite(x_te), ITE_truth_te , sqrt=True))
