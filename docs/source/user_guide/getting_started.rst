@@ -52,6 +52,9 @@ Methods Supported
    * - Dragonnet
      - `Claudia Shi et al, Adapting Neural Networks for the Estimation of Treatment Effects <https://arxiv.org/pdf/1906.02120v2.pdf>`_
      - NeurIPS 2019   
+   * - BCAUS
+     - `Belthangady et al, Minimizing bias in massive multi-arm observational studies with BCAUS: balancing covariates automatically using supervision <https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01383-x>`_
+     - BMC Medical Research Methodology 2021  
    * - GANITE
      - `Jinsung Yoon et al, GANITE: Estimation of Individualized Treatment Effects using Generative Adversarial Nets <https://openreview.net/pdf?id=ByKWUeWA->`_
      - ICLR 2018  
