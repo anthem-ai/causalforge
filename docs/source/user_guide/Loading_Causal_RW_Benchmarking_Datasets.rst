@@ -20,16 +20,16 @@ In causal inference we have
 -  **real-world datasets**: these datasets are real datasets; they are
    typically observational and obey to the FPCI, hence, they don’t come
    with counterfactuals; as a conseguence, it should not be possible to
-   do causal model validation on this kind of daatsets, although they
+   do causal model validation on this kind of datsets, although there
    are people who adopt associational metrics (e.g. accuracy or auROC)
    pretending they are proxies of causal metrics like PEHE (Precision in
-   Estimation of Heterogeneous Effect) or ATE (Average Treatment Effect)
-   MAE (Mean Absolute Error), which, on the contrary, requires
-   counterfactuals for computation;
+   Estimation of Heterogeneous Effect) or ATE (Average Treatment Effect, 
+   which, on the contrary, require counterfactuals;
 
 -  **benchmarking datasets**: these datasets can be either simulations
-   or combinations of real-world datasets and RCTs, and **they come with
-   counterfactuals**; they can be used to do causal model validation.
+   or combinations of real-world datasets and Randomized Control Trials 
+   (RCTs), and **they come with counterfactuals**; they can be used to 
+   do causal model validation.
 
 With CausalForge it is very easy to load a dataset. First, you want to
 load a proper **data loader** given the name of the dataset, and then
