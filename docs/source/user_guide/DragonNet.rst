@@ -7,7 +7,7 @@ Estimation of Treatment Effects, NeurIPS
 
 **Implementation remarks**: our implementation is exactly the same of
 the original paper with the exception of a
-*sklearn.preprocessing.StandardScaler* which was originally used to
+``sklearn.preprocessing.StandardScaler`` which was originally used to
 scale predictions.
 
 DragonNet on IHDP

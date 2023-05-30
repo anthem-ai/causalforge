@@ -29,12 +29,16 @@ Versions and Dependencies
   * ``numpy>=1.18.5``
   * ``scipy>=1.4.1``
   * ``pandas``
+  * ``cython``
   * ``statsmodels``
   * ``scikit-learn``
   * ``matplotlib``
   * ``pymc``
   * ``seaborn``
   * ``tqdm``
+  * ``tensorflow``
+  * ``keras``
+  * ``torch``
 
 
 Methods Supported
