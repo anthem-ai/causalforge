@@ -9,7 +9,6 @@ dependencies:
   - cython
   - tensorflow-gpu
   - keras 
-  - keras 
   - pytorch
   - pytorch-cuda
   - matplotlib
